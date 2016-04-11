@@ -1,5 +1,4 @@
-syntax on
-set rtp=/Users/anusha/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/,~/.vim,/etc/vim,/usr/share/vim/vimfiles,/usr/share/vim/addons,/usr/share/vim/vim70,/usr/share/vim/vimfiles,/usr/share/vim/addons/after,~/.vim/after
 " vundle {{{1
 
 " needed to run vundle (but i want this anyways)
@@ -7,8 +6,6 @@ set nocompatible
 
 " vundle needs filtype plugins off
 " i turn it on later
-filetype plugin indent off
-syntax off
 
 " set the runtime path for vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -30,7 +27,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'tmhedberg/SimpylFold'
 Plugin 'klen/python-mode'
 Plugin 'ryanss/vim-hackernews'
 Plugin 'tpope/vim-commentary'
@@ -41,13 +37,11 @@ Plugin 'tpope/vim-pathogen'
 call vundle#end()
 
 " now (after vundle finished) it is save to turn filetype plugins on
-filetype plugin indent on
 
 
 " phalgun's vimrc
 
  set nocompatible
-filetype off
 " Use pathogen to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
 call pathogen#helptags()
@@ -86,33 +80,15 @@ set nobackup
 set noswapfile
 
 
-filetype plugin indent on
 autocmd filetype python set expandtab
 
 
-"if &t_Co >= 256 || has("gui_running")
-"   colorscheme mustang
-"endif
-
-"if &t_Co > 2 || has("gui_running")
-"   " switch syntax highlighting on, when the terminal has colors
-"   syntax on
-"endif
-"
-
-syntax enable
 set background=dark
 
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
 
 let g:solarized_termcolors=256
 
 set pastetoggle=<F8>
-map <F2> :NERDTreeToggle<CR>
 
 nmap <silent> ,/ :nohlsearch<CR>
 
@@ -173,3 +149,5 @@ nnoremap <C-H> <C-W><C-H>
 
 set splitbelow
 set splitright
+filetype plugin indent on
+syntax on
